@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Top Headlines</h1>
+  <div *ngFor="let article of data?.articles" class="row mb-2">
+    <div class="col-md">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250">
+        <div class="col p-4 d-flex flex-column">
+          <strong class="d-inline-block mb-2 text-primary">{{ article.source.name }}</strong>
+          <h3 class="mb-0">{{ article.title }}</h3>
+          <div class="mb-1 text-muted">{{ article.publishedAt | date }}</div>
+          <p class="card-text mb-auto">{{ article.description }}</p>
+          <a href="{{ article.url }}" class="stretched-link" target="_blank">Continue reading</a>
+        </div>
+        <div class="col-lg p-2">
+          <a href="{{ article.url }}" target="_blank"><img src="{{ article.urlToImage }}" class="newsImage" ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
